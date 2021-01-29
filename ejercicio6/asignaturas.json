@@ -1,0 +1,38 @@
+[
+  {
+    "nombre": "Desarrollo Web Cliente",
+    "curso": "2 DAW",
+    "horas": 6,
+    "profesor": "Prof 1"
+  },
+  {
+    "nombre": "Diseño Interfaces Web",
+    "curso": "2 DAW",
+    "horas": 6,
+    "profesor": "Prof 2"
+  },
+  {
+    "nombre": "Desarrollo Web Servidores",
+    "curso": "2 DAW",
+    "horas": 8,
+    "profesor": "Prof 3"
+  },
+  {
+    "nombre": "Despliegue Aplicaciones Web",
+    "curso": "2 DAW",
+    "horas": 3,
+    "profesor": "Prof 4"
+  },
+  {
+    "nombre": "Horas de Libre Configuración",
+    "curso": "2 DAW",
+    "horas": 3,
+    "profesor": "Prof 5"
+  },
+  {
+    "nombre": "Empresas",
+    "curso": "2 DAW",
+    "horas": 3,
+    "profesor": "Prof 6"
+  }
+]

@@ -25,7 +25,6 @@ function start() {
       htmlRequest.addEventListener(
         "load",
         () => {
-          console.log(datos);
           var datos = JSON.parse(htmlRequest.responseText);
           renderHTML(datos, campoElegido, textoObtenido);
         },
@@ -37,28 +36,37 @@ function start() {
   );
 
   function renderHTML(datos, campoElegido, textoObtenido) {
-    var textoInner =
-      "<table border=1><tr><th>Nombre Centro</th><th>Localidad</th><th>Provincia</th><th>Telefono</th><th>Fecha Visita</th><th>Numero Visitantes</th></tr>";
+    var textoInner = "";
     // // Hacemos un bucle para recorrer todos los objetos literales recibidos en el array resultados y mostrar su contenido.
 
+    console.log(textoInner);
     for (var objeto of datos) {
-     	if (objeto[campoElegido] == textoObtenido) {
-      textoInner +=
-        "<tr><td>" +
-        objeto.nombrecentro +
-        "</td><td>" +
-        objeto.localidad +
-        "</td><td>" +
-        objeto.provincia +
-        "</td><td>" +
-        objeto.telefono +
-        "</td><td>" +
-        objeto.fechavisita +
-        "</td><td>" +
-        objeto.numvisitantes +
-        "</td></tr>";
+      if (objeto[campoElegido] == textoObtenido) {
+        textoInner +=
+          "<tr><td>" +
+          objeto.nombrecentro +
+          "</td><td>" +
+          objeto.localidad +
+          "</td><td>" +
+          objeto.provincia +
+          "</td><td>" +
+          objeto.telefono +
+          "</td><td>" +
+          objeto.fechavisita +
+          "</td><td>" +
+          objeto.numvisitantes +
+          "</td></tr>";
       }
     }
-    resultados.innerHTML = textoInner;
+
+    console.log(textoInner);
+    if (textoInner.length > 0) {
+      textoInner =
+        "<table border=1><tr><th>Nombre Centro</th><th>Localidad</th><th>Provincia</th><th>Telefono</th><th>Fecha Visita</th><th>Numero Visitantes</th></tr>" +
+        textoInner;
+      resultados.innerHTML = textoInner;
+    } else {
+      resultados.innerHTML = "No existen datos con esa consulta";
+    }
   }
 }

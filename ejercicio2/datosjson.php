@@ -1,50 +1,32 @@
-<?php
-	//Versión 20200111 probada con php7.2
-	// Cabecera para indicar que vamos a enviar datos JSON y que no haga caché de los datos.
+ <?php
 	header("Content-Type: application/json; charset=UTF-8");
 	header('Cache-Control: no-cache, must-revalidate');
 	header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
-	
-/* 	Utilizar el fichero dbcreacion_ajax.sql incluído en la carpeta para crear la base de datos, usuario y tabla en tu servidor MySQL.
-	Si fuera necesario modifica los datos de la configuración y adáptalos a tu entorno de trabajo. */
-	
-	// Configuración BASE DE DATOS MYSQL
+
+
+	$campo = $_GET["campo"];
+	$valor = 	$_GET["valor"];
 	$servidor = "localhost";
 	$basedatos = "ajax";
-	$usuario = "ajax";	
+	$usuario = "ajax";
 	$password = "dwec";
 
-	// Creamos la conexión al servidor.
 	$conexion = new mysqli($servidor, $usuario, $password, $basedatos);
-	mysqli_set_charset($conexion,"utf8"); //necesario para que codifique bien los datos de la BBDD y funcione correctamente json_encode más adelante.
+	mysqli_set_charset($conexion, "utf8");
 
 	if ($conexion->connect_errno) {
 		echo "Fallo al conectar a MySQL: (" . $conexion->connect_errno . ") " . $conexion->connect_error;
-	}
-	
-	// Consulta SQL para obtener los datos de los centros.
-	$sql="select * from centros order by nombrecentro";
+	}	
+	$sql = "select * from centros where " . $campo . " LIKE '$valor'";
 	if ($resultado = $conexion->query($sql)) {
 		$datos = array();
 
-		while ( $fila = $resultado->fetch_assoc() )	{
-			// Almacenamos en un array  cada una de las filas que vamos leyendo del recordset.
-			$datos[]=$fila;
+		while ($fila = $resultado->fetch_assoc()) {
+			$datos[] = $fila;
 		}
 	}
-	/* liberar el conjunto de resultados */
 	$resultado->free();
-
-	// Como resultado se puede enviar algo similar a:
-	/*
-	[ {"id":"3","nombrecentro":"IES San Clemente","localidad":"Santiago de Compostela","provincia":"A Coruña" ,"telefono":"981580496","fechavisita":"2010-11-26", "numvisitantes":"60"} , {"id":"10","nombrecentro":"IES As Fontiñas","localidad" : ..... } ]
-	
-	// Empleando la siguiente instrucción:
 	echo json_encode($datos);
-	
-	*/
-
-	echo json_encode($datos); // función de PHP que convierte a formato JSON el array.
-	/* cerrar la conexión */
 	$conexion->close();
-?>
+
+	?>

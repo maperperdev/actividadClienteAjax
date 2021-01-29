@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Ejemplo dwec07 - 2.7 - JSON Ajax asíncrono</title>
+    <script type="text/javascript" src="app.js"></script>
+    <style>
+      body {
+        text-align: center;
+      }
+      #resultados {
+        background: yellow;
+        width: fit-content;
+      }
+      .formulario {
+        text-align: left;
+        width: fit-content;
+        margin: 0px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="formulario">
+      <table>
+        <tr>
+          <td>Nombre</td>
+          <td>
+            <input type="text" id="nombreCentro" />
+          </td>
+        </tr>
+        <tr>
+          <td>Localidad</td>
+          <td><input type="text" id="localidad" /></td>
+        </tr>
+        <tr>
+          <td>Provincia</td>
+          <td>
+            <input type="text" id="provincia" />
+          </td>
+        </tr>
+        <tr>
+          <td>Telefono</td>
+          <td><input type="number" id="telefono" /></td>
+        </tr>
+        <tr>
+          <td>Fecha</td>
+          <td>
+            <input type="text" id="fechaVisita" id="fechaVisita" />
+          </td>
+        </tr>
+        <tr>
+          <td>visitas</td>
+          <td>
+            <input type="number" id="numVisitas" />
+          </td>
+        </tr>
+      </table>
+
+      <button id="enviar">Insertar</button>
+    </div>
+    <div id="resultados"></div>
+    <div id="indicador"></div>
+  </body>
+</html>

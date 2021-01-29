@@ -1,0 +1,38 @@
+<asignaturas>
+	<asignatura>
+		<nombre>Desarrollo Web Cliente</nombre>
+		<curso>2 DAW</curso>
+		<horas>6</horas>
+		<profesor>Prof 1</profesor>
+	</asignatura>
+	<asignatura>
+		<nombre>Diseño Interfaces Web</nombre>
+		<curso>2 DAW</curso>
+		<horas>6</horas>
+		<profesor>Prof 2</profesor>
+	</asignatura>
+	<asignatura>
+		<nombre>Desarrollo Web Servidor</nombre>
+		<curso>2 DAW</curso>
+		<horas>8</horas>
+		<profesor>Prof 3</profesor>
+	</asignatura>
+	<asignatura>
+		<nombre>Despliegue Aplicaciones Web</nombre>
+		<curso>2 DAW</curso>
+		<horas>3</horas>
+		<profesor>Prof 4</profesor>
+	</asignatura>
+	<asignatura>
+		<nombre>Libre Configuración</nombre>
+		<curso>2 DAW</curso>
+		<horas>3</horas>
+		<profesor>Prof 5</profesor>
+	</asignatura>
+	<asignatura>
+		<nombre>Empresas</nombre>
+		<curso>2 DAW</curso>
+		<horas>4</horas>
+		<profesor>Prof 6</profesor>
+	</asignatura>
+</asignaturas>

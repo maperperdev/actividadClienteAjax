@@ -12,7 +12,14 @@
     </style>
   </head>
   <body>
-  <label for="nombreCampos">Campo: </label> 
+    <p>Opciones válidas</p>
+
+    <ol>
+      <li>Que empiece por la letra que se indique: letra%</li>
+      <li>Que contenga la letra que se indique %letra%</li>
+      <li>Que termine por la letra que se indique %letra</li>
+    </ol>
+    <label for="nombreCampos">Campo: </label>
     <select name="nombreCampos">
       <option value="nombrecentro">Nombre Centro</option>
       <option value="localidad">Localidad</option>
@@ -20,13 +27,18 @@
       <option value="telefono">Teléfono</option>
       <option value="fechavisita">Fecha Visita</option>
       <option value="numvisitantes">Número de Visitantes</option>
-		</select>
-		
-  <label for="nombreCampos">Valor: </label> 
-		<input type="text" name="campoElegido" id="texto" placeholder="Campo texto">
-		<button id="enviar">Enviar</button>	
-		
-		<div id="resultados"></div>
+    </select>
+
+    <label for="nombreCampos">Valor: </label>
+    <input
+      type="text"
+      name="campoElegido"
+      id="texto"
+      placeholder="Campo texto"
+    />
+    <button id="enviar">Enviar</button>
+
+    <div id="resultados"></div>
     <div id="indicador"></div>
   </body>
 </html>
